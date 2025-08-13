@@ -29,10 +29,10 @@
     minikube version
 
 3) Start Minikube (on the EC2 instance)
-   Start with the Docker driver (minikube will run k8s inside containers):
-   minikube start --driver=docker --memory=4096 --cpus=2 --disk-size=20g
-   minikube status
-   kubectl cluster-info
+⦁	   Start with the Docker driver (minikube will run k8s inside containers):
+⦁	   minikube start --driver=docker --memory=4096 --cpus=2 --disk-size=20g
+⦁	   minikube status
+⦁	   kubectl cluster-info
 
 4) Prepare the application image
    Build your own image on the Minikube Docker daemon (recommended to use Docker & Minikube together)
@@ -48,35 +48,34 @@
    Create deployment.yaml and service.yaml on the EC2 instance (or in your project directory).
 
 6) Deploy to the Minikube cluster (on EC2)
-   kubectl apply -f deployment.yaml
-   kubectl apply -f service.yaml
-   kubectl get deployments
-   kubectl get pods -o wide
-   kubectl get svc
+⦁	   kubectl apply -f deployment.yaml
+⦁	   kubectl apply -f service.yaml
+⦁	   kubectl get deployments
+⦁	   kubectl get pods -o wide
+⦁	   kubectl get svc
 
 7) Access the app from your browser 
    In your browser: http://<EC2_PUBLIC_IP>:30080
 
 8) Verify pods, logs, describe, and scale (on EC2)
-   kubectl get pods
- # replace <pod-name> with the name from kubectl get pods
-   kubectl describe pod <pod-name>
-   kubectl logs <pod-name>
-   kubectl logs deployment/myapp-deployment
-   kubectl scale deployment myapp-deployment --replicas=3
-   kubectl get pods 
+⦁	   kubectl get pods
+⦁	   replace <pod-name> with the name from kubectl get pods
+⦁	   kubectl describe pod <pod-name>
+⦁	   kubectl logs <pod-name>
+⦁	   kubectl logs deployment/myapp-deployment
+⦁	   kubectl scale deployment myapp-deployment --replicas=3
+⦁	   kubectl get pods 
 
 10) Push this project to GitHub
 
-    git init
-    git add deployment.yaml service.yaml Dockerfile index.html 
-    git commit -m "minikube on EC2: deployment + service + Dockerfile"
-    git remote add origin git@github.com:YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-    git branch -M main
-    git push -u origin main
-    git remote add origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-    git push -u origin main
-
+⦁	    git init
+⦁	    git add deployment.yaml service.yaml Dockerfile index.html 
+⦁	    git commit -m "minikube on EC2: deployment + service + Dockerfile"
+⦁	    git remote add origin git@github.com:YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+⦁	    git branch -M main
+⦁	    git push -u origin main
+⦁	    git remote add origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+⦁	    git push -u origin main
 
 11) Final checklist (copy & run)
 ⦁	    Create EC2 (Ubuntu 22.04), open SSH and NodePort ports.
